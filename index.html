@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Учёт задач</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <nav class="tabs">
+      <button class="tab active" data-tab="form">Новая запись</button>
+      <button class="tab" data-tab="history">История</button>
+    </nav>
+
+    <!-- FORM TAB -->
+    <div id="tab-form" class="tab-content active">
+      <form id="task-form">
+
+        <div class="field">
+          <label>Дата</label>
+          <input type="date" id="date" name="date" required />
+        </div>
+
+        <div class="field">
+          <label>Время</label>
+          <div class="time-picker">
+            <select id="time-hours" name="time_hours"></select>
+            <span class="time-sep">:</span>
+            <select id="time-minutes" name="time_minutes"></select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Проект</label>
+          <div class="searchable-select" id="ss-project">
+            <input type="text" class="ss-input" placeholder="Выберите или введите..." autocomplete="off" />
+            <input type="hidden" name="project" />
+            <div class="ss-dropdown hidden"></div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Исполнитель</label>
+          <div class="searchable-select" id="ss-executor">
+            <input type="text" class="ss-input" placeholder="Выберите или введите..." autocomplete="off" />
+            <input type="hidden" name="executor" />
+            <div class="ss-dropdown hidden"></div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>ЛПР</label>
+          <div class="searchable-select" id="ss-lpr">
+            <input type="text" class="ss-input" placeholder="Выберите или введите..." autocomplete="off" />
+            <input type="hidden" name="lpr" />
+            <div class="ss-dropdown hidden"></div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Должность</label>
+          <div class="searchable-select" id="ss-position">
+            <input type="text" class="ss-input" placeholder="Выберите или введите..." autocomplete="off" />
+            <input type="hidden" name="position" />
+            <div class="ss-dropdown hidden"></div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Тип задачи</label>
+          <div class="searchable-select" id="ss-task_type">
+            <input type="text" class="ss-input" placeholder="Выберите или введите..." autocomplete="off" />
+            <input type="hidden" name="task_type" />
+            <div class="ss-dropdown hidden"></div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Текущий этап</label>
+          <div class="searchable-select" id="ss-stage">
+            <input type="text" class="ss-input" placeholder="Выберите или введите..." autocomplete="off" />
+            <input type="hidden" name="stage" />
+            <div class="ss-dropdown hidden"></div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Задача</label>
+          <input type="text" id="task_name" name="task_name" placeholder="Название задачи" required />
+        </div>
+
+        <div class="field">
+          <label>Описание задачи</label>
+          <textarea id="task_description" name="task_description" placeholder="Подробное описание..." rows="3"></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">Отправить</button>
+      </form>
+    </div>
+
+    <!-- HISTORY TAB -->
+    <div id="tab-history" class="tab-content hidden">
+      <div id="history-list"></div>
+      <p id="history-empty" class="empty-msg hidden">История пуста</p>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
