@@ -1,6 +1,6 @@
 // ─── Config ────────────────────────────────────────────────────────────────
 const DATA_URL = "./data.json"; // путь к JSON со списками
-const WEBHOOK_URL = "https://indulgently-iridescent-katydid.cloudpub.ru"; // замени на свой
+const WEBHOOK_URL = "https://indulgently-iridescent-katydid.cloudpub.ru/webhook/ab50b882-dd5e-4968-b903-966c7c0cdf47";
 const HISTORY_KEY = "task_history";
 const MAX_HISTORY = 50;
 
